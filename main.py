@@ -1,13 +1,3 @@
-import requests 
-from bs4 import BeautifulSoup 
-def parse():
-    url = 'https://omsk.drom.ru/auto/all/' 
-    page = requests.get(url) 
-    print(page.status_code)  
-    page_parsed = BeautifulSoup(page.text, 'html.parser') 
-    employees = page_parsed.findAll('div', class_="css-17lk78h e3f4v4l2") 
-    with open('result.txt', 'w') as f: 
-        for employee in employees: 
-            auto = employee.find('span').text.strip()
-            f.write(auto + '\n') 
-
+import Parser
+if __name__ == '__main__':
+    Parser.parse()
