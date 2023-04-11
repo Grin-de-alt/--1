@@ -14,3 +14,4 @@ def parse():
                 name1 = auto1.find('span').text.strip()
                 f.write('Модель: ' + name + ' года. Цена: ' + name1 + ' руб.' '\n')
                 break
+    f.close(autos.txt)
